@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="page-title">Nav-Tools - 导航网站</title>
+    <title id="page-title">My-Nav - 我的导航网站</title>
     <meta
       name="description"
       content="精选优质网站导航，为您提供便捷的网站收藏和访问服务"
@@ -666,13 +666,22 @@
             <p class="text-gray-500" id="copyright-text">
               Powered by @AhYi8 ✨ &copy; 2024
             </p>
-            <button
-              id="settings-btn"
-              class="text-gray-500 hover:text-accent-color transition-colors"
-              title="设置"
-            >
-              <i data-lucide="settings" class="w-4 h-4"></i>
-            </button>
+            <div class="flex items-center gap-3">
+              <button
+                id="nav-manager-btn"
+                class="text-gray-500 hover:text-accent-color transition-colors"
+                title="导航管理"
+              >
+                <i data-lucide="folder-cog" class="w-4 h-4"></i>
+              </button>
+              <button
+                id="settings-btn"
+                class="text-gray-500 hover:text-accent-color transition-colors"
+                title="设置"
+              >
+                <i data-lucide="settings" class="w-4 h-4"></i>
+              </button>
+            </div>
           </footer>
         </div>
       </aside>
@@ -806,11 +815,317 @@
       </div>
     </div>
 
+    <div
+      id="nav-manager-modal"
+      class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm modal-hidden"
+    >
+      <div
+        class="modal-container bg-[var(--sidebar-bg-color)] w-full max-w-5xl rounded-xl shadow-xl border border-[var(--border-color)]"
+      >
+        <header
+          class="p-5 border-b border-[var(--border-color)] flex justify-between items-center"
+        >
+          <h2 class="text-lg font-bold flex items-center gap-2">
+            <i data-lucide="folder-cog" class="w-5 h-5 text-accent-color"></i
+            ><span>导航管理</span>
+          </h2>
+          <button
+            id="nav-manager-close-btn"
+            class="text-gray-500 hover:text-white transition-colors p-1 rounded-full"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </header>
+        <main class="p-5 md:p-6 max-h-[76vh] overflow-y-auto">
+          <nav class="grid grid-cols-3 gap-2 mb-5" aria-label="导航管理功能">
+            <button
+              type="button"
+              data-nav-manager-tab="add-site"
+              class="nav-manager-tab rounded-lg px-3 py-2 text-sm font-semibold bg-blue-600 text-white"
+            >
+              添加网站
+            </button>
+            <button
+              type="button"
+              data-nav-manager-tab="categories"
+              class="nav-manager-tab rounded-lg px-3 py-2 text-sm font-semibold border border-[var(--border-color)] text-gray-300 hover:text-white"
+            >
+              整理分类
+            </button>
+            <button
+              type="button"
+              data-nav-manager-tab="sites"
+              class="nav-manager-tab rounded-lg px-3 py-2 text-sm font-semibold border border-[var(--border-color)] text-gray-300 hover:text-white"
+            >
+              删除网站
+            </button>
+          </nav>
+
+          <section data-nav-manager-panel="add-site" class="border border-[var(--border-color)] rounded-lg p-4 md:p-5">
+            <div class="flex items-start gap-3 mb-5">
+              <div class="w-9 h-9 rounded-full bg-blue-600/20 text-blue-300 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="plus" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-100 text-base">添加网站</h3>
+                <p class="text-sm text-gray-400 mt-1">只需要填写名称和网址，其他内容可以留空。</p>
+              </div>
+            </div>
+
+            <form id="add-site-form" class="space-y-5">
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">1</span>
+                  <h4 class="font-semibold text-gray-100">先选位置</h4>
+                  <span class="text-sm text-gray-500">网站保存在哪里</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label class="block">
+                    <span id="site-category-label" class="block text-sm text-gray-300 mb-1">选择左侧大分类</span>
+                    <select
+                      id="site-category-select"
+                      aria-labelledby="site-category-label"
+                      class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                    ></select>
+                  </label>
+                  <label class="block">
+                    <span id="site-subcategory-label" class="block text-sm text-gray-300 mb-1">选择分类下的小分组</span>
+                    <select
+                      id="site-subcategory-select"
+                      aria-labelledby="site-subcategory-label"
+                      class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                    ></select>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">2</span>
+                  <h4 class="font-semibold text-gray-100">再填网站</h4>
+                  <span class="text-sm text-gray-500">名称和网址必填</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label class="block">
+                    <span id="site-title-label" class="block text-sm text-gray-300 mb-1">网站名称</span>
+                    <input
+                      id="site-title-input"
+                      aria-labelledby="site-title-label"
+                      class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                      placeholder="例如：OpenAI"
+                      required
+                    />
+                  </label>
+                  <label class="block">
+                    <span id="site-url-label" class="block text-sm text-gray-300 mb-1">网站网址</span>
+                    <input
+                      id="site-url-input"
+                      aria-labelledby="site-url-label"
+                      class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                      placeholder="https://example.com"
+                      required
+                    />
+                  </label>
+                </div>
+                <label class="block mt-3">
+                  <span id="site-desc-label" class="block text-sm text-gray-300 mb-1">网站描述</span>
+                  <textarea
+                    id="site-desc-input"
+                    aria-labelledby="site-desc-label"
+                    class="search-input rounded-lg px-3 py-2 text-sm w-full min-h-20"
+                    placeholder="简单写一句这个网站是做什么的"
+                  ></textarea>
+                </label>
+                <details class="mt-3">
+                  <summary class="cursor-pointer text-sm text-gray-400 hover:text-gray-200">高级选项：图标、关键词、推荐标记</summary>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                    <label class="block">
+                      <span class="block text-sm text-gray-300 mb-1">图标 URL</span>
+                      <input
+                        id="site-logo-input"
+                        class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                        placeholder="不填会自动尝试获取"
+                      />
+                    </label>
+                    <label class="block">
+                      <span class="block text-sm text-gray-300 mb-1">搜索关键词</span>
+                      <input
+                        id="site-keywords-input"
+                        class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                        placeholder="多个词用空格隔开"
+                      />
+                    </label>
+                    <div class="sm:col-span-2 flex items-center gap-5 text-sm text-gray-300">
+                      <label class="flex items-center gap-2">
+                        <input id="site-highlight-input" type="checkbox" />
+                        高亮显示
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input id="site-recommended-input" type="checkbox" />
+                        显示推荐标记
+                      </label>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <div class="flex justify-end">
+                <button
+                  type="submit"
+                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold"
+                >
+                  <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                  添加到导航
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <section data-nav-manager-panel="categories" class="hidden border border-[var(--border-color)] rounded-lg p-4 md:p-5">
+            <div class="mb-5">
+              <h3 class="font-semibold text-gray-100">整理分类</h3>
+              <p class="text-sm text-gray-500 mt-1">按顺序处理：先建大分类，再给分类加小分组；删除操作单独放在最后。</p>
+            </div>
+
+            <div class="space-y-6">
+              <section data-category-section="create-category" class="category-card border border-[var(--border-color)] rounded-lg p-4">
+                <div class="mb-3">
+                  <h4 class="font-semibold text-gray-100">第 1 步：新增大分类</h4>
+                  <p class="text-sm text-gray-500 mt-1">左侧导航栏会新增一个大分类。添加小分组请继续使用第 2 步。</p>
+                </div>
+                <form id="add-category-form" class="space-y-3">
+                  <div class="grid grid-cols-1 gap-3">
+                    <label class="block">
+                      <span class="block text-sm text-gray-300 mb-1">大分类名称</span>
+                      <input
+                        id="new-category-name"
+                        class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                        placeholder="例如：AI工具"
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div class="flex justify-end">
+                    <button
+                      type="submit"
+                      class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold"
+                    >
+                      <i data-lucide="folder-plus" class="w-4 h-4"></i>
+                      添加大分类
+                    </button>
+                  </div>
+                </form>
+              </section>
+
+              <section data-category-section="create-subcategory" class="category-card border border-[var(--border-color)] rounded-lg p-4">
+                <div class="mb-3">
+                  <h4 class="font-semibold text-gray-100">第 2 步：给已有分类添加小分组</h4>
+                  <p class="text-sm text-gray-500 mt-1">先选择一个大分类，再输入要增加的小分组名称。</p>
+                </div>
+                <form id="add-subcategory-form" class="space-y-3">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <label class="block">
+                      <span class="block text-sm text-gray-300 mb-1">选择大分类</span>
+                      <select
+                        id="manage-category-select"
+                        class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                      ></select>
+                    </label>
+                    <label class="block">
+                      <span class="block text-sm text-gray-300 mb-1">新增小分组名称</span>
+                      <input
+                        id="new-subcategory-name"
+                        class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                        placeholder="例如：图片生成"
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div class="flex justify-end">
+                    <button
+                      type="submit"
+                      class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold"
+                    >
+                      <i data-lucide="list-plus" class="w-4 h-4"></i>
+                      添加小分组
+                    </button>
+                  </div>
+                </form>
+              </section>
+
+              <section data-category-section="delete-category-items" class="category-card border border-red-500/30 bg-red-500/5 rounded-lg p-4">
+                <div class="mb-3">
+                  <h4 class="font-semibold text-red-200">危险操作：删除分类或分组</h4>
+                  <p class="text-sm text-red-200/70 mt-1">删除分类会同时删除里面所有小分组和网站；删除分组会删除该分组下的网站。</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label class="block">
+                    <span class="block text-sm text-gray-300 mb-1">当前大分类</span>
+                    <select
+                      id="manage-subcategory-category-shadow"
+                      class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                    ></select>
+                  </label>
+                  <label class="block">
+                    <span class="block text-sm text-gray-300 mb-1">选择要删除的小分组</span>
+                    <select
+                      id="manage-subcategory-select"
+                      class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                    ></select>
+                  </label>
+                </div>
+                <div class="mt-3 flex flex-wrap justify-end gap-2">
+                  <button
+                    id="delete-category-btn"
+                    class="px-3 py-2 rounded-lg border border-red-500/50 text-red-300 hover:bg-red-500/10 text-sm font-semibold"
+                  >
+                    删除当前大分类
+                  </button>
+                  <button
+                    id="delete-subcategory-btn"
+                    class="px-3 py-2 rounded-lg border border-red-500/50 text-red-300 hover:bg-red-500/10 text-sm font-semibold"
+                  >
+                    删除选中的小分组
+                  </button>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section data-nav-manager-panel="sites" class="hidden border border-[var(--border-color)] rounded-lg p-4 md:p-5">
+            <div class="mb-4">
+              <h3 class="font-semibold text-gray-100">管理当前分组的网站</h3>
+              <p class="text-sm text-gray-500 mt-1">先选择分类和分组，再删除不要的网站。</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+              <label class="block">
+                <span class="block text-sm text-gray-300 mb-1">选择大分类</span>
+                <select
+                  id="site-list-category-select"
+                  class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                ></select>
+              </label>
+              <label class="block">
+                <span class="block text-sm text-gray-300 mb-1">选择小分组</span>
+                <select
+                  id="site-list-subcategory-select"
+                  class="search-input rounded-lg px-3 py-2 text-sm w-full"
+                ></select>
+              </label>
+            </div>
+            <div id="site-list" class="space-y-2"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
     <script src="./config/nav-config.js"></script>
+    <script src="./js/nav-local-manager.js"></script>
     <script>
       // --- 全局变量和页面加载总入口 ---
       let favorites = [];
       let allNavMap = new Map();
+      let navChanges = NavLocalManager.createChangeSet();
 
       // --- 通知系统 ---
       function showNotification(message, type = "error") {
@@ -839,6 +1154,8 @@
             console.error("错误：`navData` 未定义。");
             return;
           }
+          navChanges = NavLocalManager.loadChangeSet(localStorage);
+          navData = NavLocalManager.applyChangeSet(navData, navChanges);
           applySiteConfig();
           initializeNavMap();
           loadFavorites();
@@ -886,7 +1203,37 @@
         initScrollSpy();
         initNavigation();
         initSettingsModal();
+        initNavManager();
         initDragSort();
+      }
+
+      function escapeHtml(value) {
+        return String(value ?? "").replace(/[&<>"']/g, (char) => {
+          const entities = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+          };
+          return entities[char];
+        });
+      }
+
+      function saveManagedNavData() {
+        NavLocalManager.saveChangeSet(localStorage, navChanges);
+        localStorage.removeItem("nav-tools-order");
+      }
+
+      function refreshNavAfterManage() {
+        allNavMap = new Map();
+        initializeNavMap();
+        favorites = favorites.filter((title) => allNavMap.has(title));
+        saveFavorites();
+        renderContent();
+        initDragSort();
+        applyStickySearchBoxSetting();
+        populateNavManager();
       }
 
       // --- 拖拽排序核心逻辑 (SortableJS 最终版) ---
@@ -1165,7 +1512,7 @@
             const iconName = (typeof categoryIcons !== "undefined" && categoryIcons[d]) ? categoryIcons[d] : "folder";
             primaryLink.innerHTML = `
               <span class="flex items-center">
-                <i data-lucide="${iconName}" class="mr-3 flex-shrink-0"></i> ${d}
+                <i data-lucide="${iconName}" class="mr-3 flex-shrink-0"></i> ${escapeHtml(d)}
               </span>
               <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
             `;
@@ -1186,9 +1533,9 @@
               if (showSubCategoryIcons) {
                 const subIconName = (typeof subCategoryIcons !== "undefined" && subCategoryIcons[d] && subCategoryIcons[d][subCategory]) 
                   ? subCategoryIcons[d][subCategory] : "circle";
-                subLink.innerHTML = `<i data-lucide="${subIconName}" class="mr-2 flex-shrink-0 w-3 h-3"></i> ${subCategory}`;
+                subLink.innerHTML = `<i data-lucide="${subIconName}" class="mr-2 flex-shrink-0 w-3 h-3"></i> ${escapeHtml(subCategory)}`;
               } else {
-                subLink.innerHTML = `<span class="mr-2 flex-shrink-0 w-3 h-3"></span> ${subCategory}`;
+                subLink.innerHTML = `<span class="mr-2 flex-shrink-0 w-3 h-3"></span> ${escapeHtml(subCategory)}`;
               }
               
               secondaryNav.appendChild(subLink);
@@ -1254,7 +1601,7 @@
             n.className = "sidebar-link flex items-center py-2 px-4 rounded-md mb-1 font-medium border-l-2 border-l-transparent";
 
             const iconName = (typeof categoryIcons !== "undefined" && categoryIcons[d]) ? categoryIcons[d] : "folder";
-            n.innerHTML = `<i data-lucide="${iconName}" class="mr-3 flex-shrink-0"></i> ${d}`;
+            n.innerHTML = `<i data-lucide="${iconName}" class="mr-3 flex-shrink-0"></i> ${escapeHtml(d)}`;
 
             o.appendChild(n);
             const l = document.createElement("section");
@@ -1310,7 +1657,7 @@
         (o.className = "nav-card group flex space-x-4 py-6 pr-6"),
           (o.dataset.name = c.title.toLowerCase()),
           (o.dataset.navId = c.title),
-          (o.dataset.keywords = (c.keywords + " " + c.title).toLowerCase()),
+          (o.dataset.keywords = ((c.keywords || "") + " " + c.title).toLowerCase()),
           o.addEventListener("click", (o) => {
             if (o.target.closest(".favorite-btn")) return;
             window.open(c.url, "_blank");
@@ -1331,19 +1678,26 @@
             "self-center flex-shrink-0 pointer-events-none nav-card-logo";
 
           if (c.logoUrl) {
-            t.innerHTML = `<img src="${c.logoUrl}" alt="${c.title} logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /><i data-lucide="globe" class="w-10 h-10" style="display:none; color: var(--accent-color);"></i>`;
+            t.innerHTML = `<img src="${escapeHtml(c.logoUrl)}" alt="${escapeHtml(c.title)} logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /><i data-lucide="globe" class="w-10 h-10" style="display:none; color: var(--accent-color);"></i>`;
           } else {
             // 如果没有提供 logoUrl，尝试自动获取网站 favicon
             const domain = new URL(c.url).hostname;
-            t.innerHTML = `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" alt="${c.title} logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /><i data-lucide="globe" class="w-10 h-10" style="display:none; color: var(--accent-color);"></i>`;
+            t.innerHTML = `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" alt="${escapeHtml(c.title)} logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /><i data-lucide="globe" class="w-10 h-10" style="display:none; color: var(--accent-color);"></i>`;
           }
           o.appendChild(t);
         }
 
         const d = document.createElement("div");
-        (d.className = "text-left self-start pointer-events-none"),
-          (d.innerHTML = `<h3 class="font-bold text-lg text-gray-100 line-clamp-1">${c.title}</h3><p class="text-sm text-gray-400 line-clamp-2 nav-card-desc">${c.desc}</p>`),
-          o.appendChild(d);
+        d.className = "text-left self-start pointer-events-none";
+        const titleEl = document.createElement("h3");
+        titleEl.className = "font-bold text-lg text-gray-100 line-clamp-1";
+        titleEl.textContent = c.title;
+        const descEl = document.createElement("p");
+        descEl.className = "text-sm text-gray-400 line-clamp-2 nav-card-desc";
+        descEl.textContent = c.desc || "";
+        d.appendChild(titleEl);
+        d.appendChild(descEl);
+        o.appendChild(d);
 
         // 添加高亮状态支持
         if (c.highlight === true) {
@@ -1467,7 +1821,7 @@
           
           globalTooltip = document.createElement('div');
           globalTooltip.className = 'global-tooltip';
-          globalTooltip.innerHTML = `<h3 class="font-bold text-lg text-gray-100">${c.title}</h3><p class="text-sm text-gray-400">${c.desc}</p>`;
+          globalTooltip.innerHTML = `<h3 class="font-bold text-lg text-gray-100">${escapeHtml(c.title)}</h3><p class="text-sm text-gray-400">${escapeHtml(c.desc || "")}</p>`;
           globalTooltip.style.visibility = 'hidden';
           globalTooltipContainer.appendChild(globalTooltip);
 
@@ -1678,6 +2032,336 @@
           let stickySearchBox = c.target.checked;
           localStorage.setItem("nav-tools-sticky-search-box", stickySearchBox);
           applyStickySearchBoxSetting();
+        });
+      }
+
+      function getManagedSubCategories(category) {
+        const value = navData[category];
+        if (!value) return [];
+        return Array.isArray(value) ? ["默认分组"] : Object.keys(value);
+      }
+
+      function getManagedItems(category, subCategory) {
+        const value = navData[category];
+        if (!value) return [];
+        if (Array.isArray(value)) return value;
+        return Array.isArray(value[subCategory]) ? value[subCategory] : [];
+      }
+
+      function fillSelect(select, options, emptyText, preferredValue) {
+        if (!select) return "";
+        select.innerHTML = "";
+        if (!options.length) {
+          const option = document.createElement("option");
+          option.value = "";
+          option.textContent = emptyText;
+          select.appendChild(option);
+          select.disabled = true;
+          return "";
+        }
+        select.disabled = false;
+        options.forEach((value) => {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = value;
+          select.appendChild(option);
+        });
+        select.value = options.includes(preferredValue) ? preferredValue : options[0];
+        return select.value;
+      }
+
+      function populateNavManager() {
+        const categories = Object.keys(navData);
+        const manageCategorySelect = document.getElementById("manage-category-select");
+        const manageSubCategoryCategoryShadow = document.getElementById("manage-subcategory-category-shadow");
+        const manageSubCategorySelect = document.getElementById("manage-subcategory-select");
+        const siteCategorySelect = document.getElementById("site-category-select");
+        const siteSubCategorySelect = document.getElementById("site-subcategory-select");
+        const siteListCategorySelect = document.getElementById("site-list-category-select");
+        const siteListSubCategorySelect = document.getElementById("site-list-subcategory-select");
+        const siteList = document.getElementById("site-list");
+
+        const manageCategory = fillSelect(
+          manageCategorySelect,
+          categories,
+          "暂无分类",
+          manageCategorySelect && manageCategorySelect.value
+        );
+        const manageSubCategory = fillSelect(
+          manageSubCategorySelect,
+          getManagedSubCategories(manageCategory),
+          "暂无分组",
+          manageSubCategorySelect && manageSubCategorySelect.value
+        );
+        fillSelect(
+          manageSubCategoryCategoryShadow,
+          categories,
+          "暂无分类",
+          manageCategory
+        );
+        const siteCategory = fillSelect(
+          siteCategorySelect,
+          categories,
+          "暂无分类",
+          siteCategorySelect && siteCategorySelect.value
+        );
+        const siteSubCategory = fillSelect(
+          siteSubCategorySelect,
+          getManagedSubCategories(siteCategory),
+          "暂无分组",
+          siteSubCategorySelect && siteSubCategorySelect.value
+        );
+        const siteListCategory = fillSelect(
+          siteListCategorySelect,
+          categories,
+          "暂无分类",
+          siteListCategorySelect && siteListCategorySelect.value
+        );
+        const siteListSubCategory = fillSelect(
+          siteListSubCategorySelect,
+          getManagedSubCategories(siteListCategory),
+          "暂无分组",
+          siteListSubCategorySelect && siteListSubCategorySelect.value
+        );
+
+        document.getElementById("delete-category-btn").disabled = !manageCategory;
+        document.getElementById("delete-subcategory-btn").disabled = !manageSubCategory;
+        document.querySelector("#add-site-form button[type='submit']").disabled =
+          !siteCategory || !siteSubCategory;
+
+        siteList.innerHTML = "";
+        const items = getManagedItems(siteListCategory, siteListSubCategory);
+        if (!items.length) {
+          const empty = document.createElement("p");
+          empty.className = "text-sm text-gray-500 py-3";
+          empty.textContent = "当前分组还没有网站。";
+          siteList.appendChild(empty);
+          lucide.createIcons();
+          return;
+        }
+
+        items.forEach((item) => {
+          const row = document.createElement("div");
+          row.className =
+            "flex items-center justify-between gap-3 rounded-lg border border-[var(--border-color)] px-3 py-2";
+
+          const text = document.createElement("div");
+          text.className = "min-w-0";
+          const title = document.createElement("div");
+          title.className = "font-semibold text-sm text-gray-100 truncate";
+          title.textContent = item.title;
+          const url = document.createElement("div");
+          url.className = "text-xs text-gray-500 truncate";
+          url.textContent = item.url;
+          text.appendChild(title);
+          text.appendChild(url);
+
+          const button = document.createElement("button");
+          button.className =
+            "flex-shrink-0 px-3 py-1.5 rounded-md border border-red-500/50 text-red-300 hover:bg-red-500/10 text-xs font-semibold";
+          button.dataset.deleteSiteTitle = item.title;
+          button.innerHTML = '<i data-lucide="trash-2" class="w-3.5 h-3.5"></i>';
+          button.title = "删除网站";
+
+          row.appendChild(text);
+          row.appendChild(button);
+          siteList.appendChild(row);
+        });
+        lucide.createIcons();
+      }
+
+      function initNavManager() {
+        const openBtn = document.getElementById("nav-manager-btn");
+        const modal = document.getElementById("nav-manager-modal");
+        const closeBtn = document.getElementById("nav-manager-close-btn");
+        const addCategoryForm = document.getElementById("add-category-form");
+        const addSubCategoryForm = document.getElementById("add-subcategory-form");
+        const addSiteForm = document.getElementById("add-site-form");
+        const manageCategorySelect = document.getElementById("manage-category-select");
+        const manageSubCategoryCategoryShadow = document.getElementById("manage-subcategory-category-shadow");
+        const siteCategorySelect = document.getElementById("site-category-select");
+        const siteSubCategorySelect = document.getElementById("site-subcategory-select");
+        const siteListCategorySelect = document.getElementById("site-list-category-select");
+        const siteListSubCategorySelect = document.getElementById("site-list-subcategory-select");
+        const deleteCategoryBtn = document.getElementById("delete-category-btn");
+        const deleteSubCategoryBtn = document.getElementById("delete-subcategory-btn");
+        const siteList = document.getElementById("site-list");
+
+        const showPanel = (panelName) => {
+          document.querySelectorAll("[data-nav-manager-panel]").forEach((panel) => {
+            panel.classList.toggle("hidden", panel.dataset.navManagerPanel !== panelName);
+          });
+          document.querySelectorAll("[data-nav-manager-tab]").forEach((tab) => {
+            const active = tab.dataset.navManagerTab === panelName;
+            tab.classList.toggle("bg-blue-600", active);
+            tab.classList.toggle("text-white", active);
+            tab.classList.toggle("border", !active);
+            tab.classList.toggle("border-[var(--border-color)]", !active);
+            tab.classList.toggle("text-gray-300", !active);
+          });
+        };
+        const close = () => modal.classList.add("modal-hidden");
+        openBtn.addEventListener("click", () => {
+          populateNavManager();
+          showPanel("add-site");
+          modal.classList.remove("modal-hidden");
+          lucide.createIcons();
+        });
+        closeBtn.addEventListener("click", close);
+        modal.addEventListener("click", (event) => {
+          if (event.target === modal) close();
+        });
+
+        manageCategorySelect.addEventListener("change", populateNavManager);
+        manageSubCategoryCategoryShadow.addEventListener("change", () => {
+          manageCategorySelect.value = manageSubCategoryCategoryShadow.value;
+          populateNavManager();
+        });
+        siteCategorySelect.addEventListener("change", populateNavManager);
+        siteSubCategorySelect.addEventListener("change", populateNavManager);
+        siteListCategorySelect.addEventListener("change", populateNavManager);
+        siteListSubCategorySelect.addEventListener("change", populateNavManager);
+        document.querySelectorAll("[data-nav-manager-tab]").forEach((tab) => {
+          tab.addEventListener("click", () => {
+            showPanel(tab.dataset.navManagerTab);
+            populateNavManager();
+          });
+        });
+
+        addCategoryForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          try {
+            const categoryInput = document.getElementById("new-category-name");
+            const category = categoryInput.value.trim();
+            NavLocalManager.addCategory(navData, category);
+            NavLocalManager.recordOperation(navChanges, "addCategory", {
+              category,
+            });
+            saveManagedNavData();
+            addCategoryForm.reset();
+            refreshNavAfterManage();
+            showNotification("分类已添加", "success");
+          } catch (error) {
+            showNotification(error.message);
+          }
+        });
+
+        addSubCategoryForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          try {
+            const category = manageCategorySelect.value;
+            const subCategory = document.getElementById("new-subcategory-name").value.trim();
+            NavLocalManager.addSubCategory(navData, category, subCategory);
+            NavLocalManager.recordOperation(navChanges, "addSubCategory", {
+              category,
+              subCategory,
+            });
+            saveManagedNavData();
+            addSubCategoryForm.reset();
+            refreshNavAfterManage();
+            showNotification("分组已添加", "success");
+          } catch (error) {
+            showNotification(error.message);
+          }
+        });
+
+        deleteCategoryBtn.addEventListener("click", () => {
+          const category = manageCategorySelect.value;
+          if (!category || !confirm(`确定删除“${category}”分类及其全部网站吗？`)) return;
+          NavLocalManager.deleteCategory(navData, category);
+          NavLocalManager.recordOperation(navChanges, "deleteCategory", {
+            category,
+          });
+          favorites = favorites.filter((title) => allNavMap.has(title));
+          saveFavorites();
+          saveManagedNavData();
+          refreshNavAfterManage();
+          showNotification("分类已删除", "success");
+        });
+
+        deleteSubCategoryBtn.addEventListener("click", () => {
+          const category = manageCategorySelect.value;
+          const subCategory = document.getElementById("manage-subcategory-select").value;
+          if (!category || !subCategory || !confirm(`确定删除“${subCategory}”分组及其全部网站吗？`)) return;
+          NavLocalManager.deleteSubCategory(navData, category, subCategory);
+          NavLocalManager.recordOperation(navChanges, "deleteSubCategory", {
+            category,
+            subCategory,
+          });
+          favorites = favorites.filter((title) => allNavMap.has(title));
+          saveFavorites();
+          saveManagedNavData();
+          refreshNavAfterManage();
+          showNotification("分组已删除", "success");
+        });
+
+        addSiteForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          try {
+            const category = siteCategorySelect.value;
+            const subCategory = siteSubCategorySelect.value;
+            const newSite = {
+              title: document.getElementById("site-title-input").value,
+              url: document.getElementById("site-url-input").value,
+              desc: document.getElementById("site-desc-input").value,
+              logoUrl: document.getElementById("site-logo-input").value,
+              keywords: document.getElementById("site-keywords-input").value,
+              highlight: document.getElementById("site-highlight-input").checked,
+              recommended: document.getElementById("site-recommended-input").checked,
+            };
+            NavLocalManager.addNavItem(navData, category, subCategory, newSite);
+            NavLocalManager.recordOperation(navChanges, "addNavItem", {
+              category,
+              subCategory,
+              item: NavLocalManager.findNavItem(
+                navData,
+                category,
+                subCategory,
+                newSite.title
+              ),
+            });
+            saveManagedNavData();
+            [
+              "site-title-input",
+              "site-url-input",
+              "site-desc-input",
+              "site-logo-input",
+              "site-keywords-input",
+            ].forEach((id) => {
+              document.getElementById(id).value = "";
+            });
+            document.getElementById("site-highlight-input").checked = false;
+            document.getElementById("site-recommended-input").checked = false;
+            refreshNavAfterManage();
+            showNotification("网站已添加", "success");
+          } catch (error) {
+            showNotification(error.message);
+          }
+        });
+
+        siteList.addEventListener("click", (event) => {
+          const button = event.target.closest("[data-delete-site-title]");
+          if (!button) return;
+          const title = button.dataset.deleteSiteTitle;
+          if (!confirm(`确定删除“${title}”吗？`)) return;
+          const category = siteListCategorySelect.value;
+          const subCategory = siteListSubCategorySelect.value;
+          NavLocalManager.deleteNavItem(
+            navData,
+            category,
+            subCategory,
+            title
+          );
+          NavLocalManager.recordOperation(navChanges, "deleteNavItem", {
+            category,
+            subCategory,
+            title,
+          });
+          favorites = favorites.filter((favoriteTitle) => favoriteTitle !== title);
+          saveFavorites();
+          saveManagedNavData();
+          refreshNavAfterManage();
+          showNotification("网站已删除", "success");
         });
       }
       
