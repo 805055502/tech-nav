@@ -34,12 +34,8 @@ const subCategoryIcons = {
         '链上打狗': 'radar',
         '资讯集合': 'newspaper'
     },
-    'AI相关': {
-
-    },
-    '开源项目': {
-
-    },
+    'AI相关': {},
+    '开源项目': {},
     '影音娱乐': {
         '影视': 'film',
         '音乐': 'music'
@@ -82,7 +78,7 @@ let navData = {
                 recommended: false
             }
         ],
-        '预测市场':[
+        '预测市场': [
             {
                 title: 'polymarket',
                 desc: '全球最大的预测市场平台',
@@ -93,7 +89,7 @@ let navData = {
                 recommended: false
             },
         ],
-        '链上打狗':[
+        '链上打狗': [
             {
                 title: 'GMGN',
                 desc: '链上打狗必备，更快发现meme币',
@@ -104,7 +100,7 @@ let navData = {
                 recommended: false
             },
         ],
-        '资讯集合':[
+        '资讯集合': [
             {
                 title: 'defillama',
                 desc: 'DeFi 领域最权威、最全面的 TVL（Total Value Locked，总锁仓价值）聚合与数据分析平台',
@@ -171,87 +167,115 @@ let navData = {
         ]
     },
 
-    'AI相关':[
-        {
-            title: 'ai比价',
-            desc: '一个 Web3 / Crypto 项目社交分析平台，专注于早期发现新项目',
-            url: 'https://aibijia.org/',
-            logoUrl: 'https://aibijia.org/logos/logo.png',
-            keywords: 'ai比价',
-            highlight: false,
-            recommended: false
-        },
+    'AI相关': {
+        '中转站': [
+            {
+                title: 'ai比价',
+                desc: '一个 Web3 / Crypto 项目社交分析平台，专注于早期发现新项目',
+                url: 'https://aibijia.org/',
+                logoUrl: 'https://aibijia.org/logos/logo.png',
+                keywords: 'ai比价',
+                highlight: false,
+                recommended: false
+            },
 
-        {
-            title: 'tokennav',
-            desc: '收录了一百多个中转站，可以按模型、计费、支付方式快速筛选',
-            url: 'https://tokennav.cc/',
-            logoUrl: './assert/ico/website.png',
-            keywords: 'tokennav',
-            highlight: false,
-            recommended: false
-        },
-    ],
+            {
+                title: 'tokennav',
+                desc: '收录了一百多个中转站，可以按模型、计费、支付方式快速筛选',
+                url: 'https://tokennav.cc/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'tokennav',
+                highlight: false,
+                recommended: false
+            }
+        ],
+        '开源项目': [
+            {
+                title: 'openclaw',
+                desc: ' 2026 年最火的开源个人 AI Agent 框架（也被称为“本地运行的私人 AI 助手”），常被戏称为“小龙虾”',
+                url: 'https://github.com/openclaw/openclaw',
+                logoUrl: './assert/ico/openclaw.jpg',
+                keywords: 'openclaw agent'
+            },
+            {
+                title: 'hermes',
+                desc: ' Nous Research 推出的开源自改进（Self-Improving）AI Agent 框架，被定位为“和你一起成长的 Agent”',
+                url: 'https://github.com/NousResearch/hermes-agent',
+                logoUrl: './assert/ico/hermes.png',
+                keywords: 'hermes agent'
+            },
+            {
+                title: 'BettaFish',
+                desc: ' 人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策',
+                url: 'https://github.com/666ghj/BettaFish',
+                logoUrl: './assert/ico/BettaFish.png',
+                keywords: 'BettaFish 舆情 决策'
+            },
+            {
+                title: 'OpenCLI',
+                desc: '一个将任意网站、Electron 桌面应用或本地工具转化为标准化 CLI 的通用 CLI Hub 和 AI 原生运行时',
+                url: 'https://github.com/jackwener/OpenCLI',
+                logoUrl: './assert/ico/opencli.jpg',
+                keywords: 'OpenCLI CLI'
+            },
+            {
+                title: 'sub2api',
+                desc: '一站式开源中转服务，让 Claude、Openai 、Gemini、Antigravity订阅统一接入',
+                url: 'https://github.com/Wei-Shaw/sub2api',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'sub2api'
+            },
+            {
+                title: 'new-api',
+                desc: '基于sub2api二次开发的自托管 AI 模型聚合、分发和管理系统',
+                url: 'https://github.com/QuantumNous/new-api',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'new-api'
+            },
+            {
+                title: 'AiToEarn',
+                desc: '帮助 OPC（一人公司）、创作者、品牌与企业在全球主流平台上构建、分发并变现内容。',
+                url: 'https://github.com/yikart/AiToEarn',
+                logoUrl: './assert/ico/aitoearn.png',
+                keywords: 'AiToEarn'
+            }
+        ],
+        '资讯集合': [
+            {
+                title: 'liunx do',
+                desc: '中文互联网上最活跃的 AI 应用与技术交流社区之一',
+                url: 'https://linux.do/',
+                logoUrl: './assert/ico/liunxdo.svg',
+                keywords: 'liunx do'
+            },
+            {
+                title: 'v2ex',
+                desc: '中文互联网最老牌、最知名的创意工作者社区之一，口号是 “Way to Explore”（探索之路）',
+                url: 'https://www.v2ex.com/',
+                logoUrl: './assert/ico/v2ex.ico',
+                keywords: 'v2ex'
+            },
+        ]
+    },
 
-    '开源项目':[
-        {
-            title: 'openclaw',
-            desc: ' 2026 年最火的开源个人 AI Agent 框架（也被称为“本地运行的私人 AI 助手”），常被戏称为“小龙虾”',
-            url: 'https://github.com/openclaw/openclaw',
-            logoUrl: './assert/ico/openclaw.jpg',
-            keywords: 'openclaw agent'
-        },
-        {
-            title: 'hermes',
-            desc: ' Nous Research 推出的开源自改进（Self-Improving）AI Agent 框架，被定位为“和你一起成长的 Agent”',
-            url: 'https://github.com/NousResearch/hermes-agent',
-            logoUrl: './assert/ico/hermes.png',
-            keywords: 'hermes agent'
-        },
-        {
-            title: 'BettaFish',
-            desc: ' 人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策',
-            url: 'https://github.com/666ghj/BettaFish',
-            logoUrl: './assert/ico/BettaFish.png',
-            keywords: 'BettaFish 舆情 决策'
-        },
-        {
-            title: 'OpenCLI',
-            desc: '一个将任意网站、Electron 桌面应用或本地工具转化为标准化 CLI 的通用 CLI Hub 和 AI 原生运行时',
-            url: 'https://github.com/jackwener/OpenCLI',
-            logoUrl: './assert/ico/opencli.jpg',
-            keywords: 'OpenCLI CLI'
-        },
-        {
-            title: 'sub2api',
-            desc: '一站式开源中转服务，让 Claude、Openai 、Gemini、Antigravity订阅统一接入',
-            url: 'https://github.com/Wei-Shaw/sub2api',
-            logoUrl: './assert/ico/website.png',
-            keywords: 'sub2api'
-        },
-        {
-            title: 'new-api',
-            desc: '基于sub2api二次开发的自托管 AI 模型聚合、分发和管理系统',
-            url: 'https://github.com/QuantumNous/new-api',
-            logoUrl: './assert/ico/website.png',
-            keywords: 'new-api'
-        },
-        {
-            title: 'RuView',
-            desc: '能把普通 WiFi 信号转化为实时空间智能、无摄像头人体检测与姿态估计系统',
-            url: 'https://github.com/ruvnet/RuView',
-            logoUrl: './assert/ico/website.png',
-            keywords: 'RuView wifi'
-        },
-        {
-            title: 'AiToEarn',
-            desc: '帮助 OPC（一人公司）、创作者、品牌与企业在全球主流平台上构建、分发并变现内容。',
-            url: 'https://github.com/yikart/AiToEarn',
-            logoUrl: './assert/ico/aitoearn.png',
-            keywords: 'AiToEarn'
-        }
-    ],
-
+    '开源项目': {
+        '其他': [
+            {
+                title: 'RuView',
+                desc: '能把普通 WiFi 信号转化为实时空间智能、无摄像头人体检测与姿态估计系统',
+                url: 'https://github.com/ruvnet/RuView',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'RuView wifi'
+            },
+            {
+                title: 'wechat-article-exporter',
+                desc: '一款微信公众号文章批量下载工具，支持导出阅读量与评论数据',
+                url: 'https://github.com/wechat-article/wechat-article-exporter',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'wechat article exporter'
+            }
+        ]
+    },
     '影音娱乐': {
         '影视': [
             {
