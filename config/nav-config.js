@@ -354,6 +354,20 @@ let navData = {
                 logoUrl: './assert/ico/website.png',
                 keywords: 'publicapi 免费api'
             },
+            {
+                title: 'Product Hunt',
+                desc: '一个发现和发布新科技产品的平台',
+                url: 'https://www.producthunt.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'Product Hunt'
+            },
+            {
+                title: 'Medium',
+                desc: '一个专注于长形式写作和阅读的在线出版平台',
+                url: 'https://medium.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'medium'
+            },
         ],
     }
 };
