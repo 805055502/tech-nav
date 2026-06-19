@@ -167,6 +167,20 @@ let navData = {
         ]
     },
 
+    '股票':{
+        '美股':[
+            {
+                title: 'Quiver Quantitative',
+                desc: '专注于另类数据（Alternative Data）的股票研究平台',
+                url: 'https://www.quiverquant.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'Quiver Quantitative',
+                highlight: false,
+                recommended: false
+            }
+        ]
+    },
+
     'AI相关': {
         '中转站': [
             {
