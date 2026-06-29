@@ -189,6 +189,62 @@ let navData = {
                 recommended: false
             }
         ],
+        '会员充值': [
+            {
+                title: 'wstormai',
+                desc: 'ai会员商店',
+                url: 'https://wstormai.store/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'chongzhi.chat',
+                desc: 'ai会员商店',
+                url: 'https://chongzhi.chat/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'GPT108',
+                desc: 'ai会员商店',
+                url: 'https://gpt108.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'getgpt',
+                desc: 'ai会员商店',
+                url: 'https://getgpt.pro/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: '高血鸭的AI店',
+                desc: 'ai会员商店',
+                url: 'https://fe.dtyuedan.cn/shop/BFB74B07',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'ltt的AI店',
+                desc: 'ai会员商店',
+                url: 'https://fe.dtyuedan.cn/shop/ai66.org',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
+        ],
         '开源项目': [
             {
                 title: 'openclaw',
