@@ -88,6 +88,24 @@ let navData = {
                 highlight: false,
                 recommended: false
             },
+            {
+                title: 'Kalshi',
+                desc: '美国CFTC合规的预测市场平台',
+                url: 'https://kalshi.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'kalshi 预测',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'predict',
+                desc: '基于 BNB 的原生信息市场',
+                url: 'https://predict.fun/zh-cn',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'predict 预测',
+                highlight: false,
+                recommended: false
+            },
         ],
         '链上打狗': [
             {
