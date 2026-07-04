@@ -382,6 +382,13 @@ let navData = {
                 logoUrl: './assert/ico/website.png',
                 keywords: 'medium'
             },
+            {
+                title: 'TikHub',
+                desc: '一个提供 1000+ 个端点、覆盖 16+ 社交平台（TikTok、抖音、小红书、微博、Instagram、YouTube、Twitter/X、Bilibili、微信、知乎等）的统一社交媒体数据 API 平台',
+                url: 'https://tikhub.io/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'tikhub'
+            },
         ],
     }
 };
