@@ -185,8 +185,8 @@ let navData = {
         ]
     },
 
-    '股票':{
-        '美股':[
+    '股票': {
+        '美股': [
             {
                 title: 'Quiver Quantitative',
                 desc: '专注于另类数据（Alternative Data）的股票研究平台',
@@ -223,9 +223,27 @@ let navData = {
         ],
         '会员充值': [
             {
+                title: 'findai8',
+                desc: '可信的ai优惠与折扣聚合平台',
+                url: 'https://findai8.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
                 title: 'wstormai',
                 desc: 'ai会员商店',
                 url: 'https://wstormai.store/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'PAYPRM',
+                desc: 'PAYPRM',
+                url: 'https://www.payprm.com/',
                 logoUrl: './assert/ico/website.png',
                 keywords: 'chatgpt plus codex claude',
                 highlight: false,
