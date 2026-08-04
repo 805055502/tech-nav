@@ -294,6 +294,15 @@ let navData = {
                 highlight: false,
                 recommended: false
             },
+            {
+                title: 'GPT源头供应',
+                desc: 'ai会员商店',
+                url: 'https://pay.ldxp.cn/shop/7N7BBCJX',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
         ],
         '开源项目': [
             {
