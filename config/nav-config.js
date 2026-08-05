@@ -241,6 +241,15 @@ let navData = {
                 recommended: false
             },
             {
+                title: 'aivip',
+                desc: 'ai会员商店',
+                url: 'https://aivip1688.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
+            {
                 title: 'PAYPRM',
                 desc: 'PAYPRM',
                 url: 'https://www.payprm.com/',
