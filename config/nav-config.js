@@ -232,6 +232,15 @@ let navData = {
                 recommended: false
             },
             {
+                title: 'openprice',
+                desc: 'ai订阅全网比价',
+                url: 'https://www.openprice.cc/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
                 title: 'wstormai',
                 desc: 'ai会员商店',
                 url: 'https://wstormai.store/',
