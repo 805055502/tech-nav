@@ -472,6 +472,13 @@ let navData = {
                 keywords: "88查 企业背调 商标"
             },
             {
+                title: "账号鸭",
+                desc: "账号",
+                url: "https://www.zhanghaoya.com/",
+                logoUrl: './assert/ico/website.png',
+                keywords: "账号"
+            },
+            {
                 title: 'appstoreprice',
                 desc: '实时抓取并对比全球各大区 App Store 的应用价格',
                 url: 'https://appstoreprice.org/zh',
