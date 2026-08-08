@@ -221,7 +221,8 @@ let navData = {
                 recommended: false
             }
         ],
-        '会员充值': [
+
+        '订阅聚合':[
             {
                 title: 'findai8',
                 desc: '可信的ai优惠与折扣聚合平台',
@@ -240,6 +241,126 @@ let navData = {
                 highlight: false,
                 recommended: false
             },
+            {
+                title: 'bbai',
+                desc: '实时低价聚合，重点展示库存与核验时间，链动明码风格，更新很勤',
+                url: 'https://bbai.store/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'grokcode',
+                desc: '卡网有货最低价 + 中转站评测 + 模型天梯，信息密度较高',
+                url: 'https://www.grokcode.cn/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'recch',
+                desc: 'AI API / 卡网导航与价格监控，按模型分类展示价格与库存',
+                url: 'https://www.recch.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'closeman',
+                desc: 'AI 账号比价 + 镜像站导航 + 避坑曝光',
+                url: 'https://closeman.asia/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'aisubdeal',
+                desc: '专门找各国 App Store 最便宜的订阅地区（ChatGPT、Claude 等',
+                url: 'https://www.aisubdeal.com/zh/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'uvlio',
+                desc: 'AI 订阅方案对比 + 价格/配额变动追踪（偏官方定价）',
+                url: 'https://plantrack.uvlio.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: '17nas',
+                desc: '全球 App Store 低价雷达，覆盖较多 AI 工具',
+                url: 'https://app.17nas.com/ai-subscriptions',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'baipiao',
+                desc: 'ChatGPT / Claude / Gemini / Grok 全网比价，发卡渠道报价 + 官方区域折算，支持提交渠道',
+                url: 'https://baipiao.org/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'cardnav',
+                desc: '一站式 AI 大模型账号购买导航，聚合卡网商家、中转站、官方地区价、模型排行、使用指南，收录商家 300+、商品 7000+',
+                url: 'https://cardnav.xyz/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'pickai',
+                desc: '低价卡网订阅比价，按商品展示多家供应商报价与库存',
+                url: 'https://pickai.cc/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'resub',
+                desc: '订阅比价工具，覆盖 Netflix、ChatGPT、Spotify、Claude、Midjourney 等，含官方 + 第三方渠道',
+                url: 'https://resub.xyz/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'aiplanhub',
+                desc: '全网 AI Plan 套餐一站对比（偏官方 Coding / Token / Agent 等套餐）',
+                url: 'https://www.aiplanhub.net/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+            {
+                title: 'mycodeplan',
+                desc: '主要对比国内 AI 编程订阅方案（Kimi、讯飞、MiniMax、智谱等',
+                url: 'https://mycodeplan.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude findai8',
+                highlight: false,
+                recommended: false
+            },
+        ],
+
+        '会员充值': [
             {
                 title: 'wstormai',
                 desc: 'ai会员商店',
