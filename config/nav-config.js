@@ -445,6 +445,13 @@ let navData = {
         ],
         '开源项目': [
             {
+                title: 'ionet',
+                desc: 'ionet 是一个开源的轻量级分布式网络编程框架，框架能够做到纳秒级别的端到端延迟',
+                url: 'https://iohao.github.io/ionet/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'ionet java'
+            },
+            {
                 title: 'openclaw',
                 desc: ' 2026 年最火的开源个人 AI Agent 框架（也被称为“本地运行的私人 AI 助手”），常被戏称为“小龙虾”',
                 url: 'https://github.com/openclaw/openclaw',
