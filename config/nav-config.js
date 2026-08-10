@@ -516,6 +516,13 @@ let navData = {
                 logoUrl: './assert/ico/v2ex.ico',
                 keywords: 'v2ex'
             },
+            {
+                title: 'tgzhidao',
+                desc: '精心收录优质中文频道、群组与机器人，帮你快速找到适合自己的 Telegram 角落',
+                url: 'https://www.tgzhidao.com/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'v2ex'
+            },
         ]
     },
 
