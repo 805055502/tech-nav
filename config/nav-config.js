@@ -379,6 +379,15 @@ let navData = {
                 highlight: false,
                 recommended: false
             },
+            {
+                title: '贝贝ai商店',
+                desc: 'ai会员商店',
+                url: 'https://bei-bei.shop/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
         ],
         '开源项目': [
             {
