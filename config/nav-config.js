@@ -129,6 +129,15 @@ let navData = {
                 recommended: false
             },
             {
+                title: 'jokkimon',
+                desc: '全平台风声，秒级入耳',
+                url: 'https://wind.jokkimon.club/',
+                logoUrl: './assert/ico/website.png',
+                keywords: '数据 风声',
+                highlight: false,
+                recommended: false
+            },
+            {
                 title: 'rootdata',
                 desc: '领先的 Web3 / Crypto 项目资产数据平台（类似 Crypto 项目“百科全书 + 投融资数据库”）',
                 url: 'https://cn.rootdata.com/',
