@@ -400,6 +400,13 @@ let navData = {
         ],
         '开源项目': [
             {
+                title: 'atomic.chat',
+                desc: '针对本地模型优化的开源 AI 代理',
+                url: 'https://atomic.chat/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'atomic chat'
+            },
+            {
                 title: 'ionet',
                 desc: 'ionet 是一个开源的轻量级分布式网络编程框架，框架能够做到纳秒级别的端到端延迟',
                 url: 'https://iohao.github.io/ionet/',
