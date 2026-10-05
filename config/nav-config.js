@@ -397,6 +397,15 @@ let navData = {
                 highlight: false,
                 recommended: false
             },
+            {
+                title: 'ji8.ai',
+                desc: 'ji8.ai',
+                url: 'https://ji8.ai/',
+                logoUrl: './assert/ico/website.png',
+                keywords: 'chatgpt plus codex claude',
+                highlight: false,
+                recommended: false
+            },
         ],
         '开源项目': [
             {
