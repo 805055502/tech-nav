@@ -397,15 +397,6 @@ let navData = {
                 highlight: false,
                 recommended: false
             },
-            {
-                title: 'ji8.ai',
-                desc: 'ji8.ai',
-                url: 'https://ji8.ai/',
-                logoUrl: './assert/ico/website.png',
-                keywords: 'chatgpt plus codex claude',
-                highlight: false,
-                recommended: false
-            },
         ],
         '开源项目': [
             {
@@ -563,6 +554,13 @@ let navData = {
             }
         ],
         '其他工具': [
+            {
+                title: "bugpk",
+                desc: "BugPk-Api是一个公益且免费的API服务平台，提供短视频去水印、音乐解析等丰富的API能力",
+                url: "https://api.bugpk.com/",
+                logoUrl: './assert/ico/website.png',
+                keywords: "api bugpk 抖音 快手 bilibili"
+            },
             {
                 title: "5sim.net - 在线接码平台",
                 desc: "5sim.net - 在线接码平台。购买或者租用虚拟号码接收短信验证码并在不同网站和应用上创建大量账号。价格从1网站币起！",
