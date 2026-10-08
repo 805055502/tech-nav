@@ -278,15 +278,6 @@ let navData = {
                 recommended: false
             },
             {
-                title: 'closeman',
-                desc: 'AI 账号比价 + 镜像站导航 + 避坑曝光',
-                url: 'https://closeman.asia/',
-                logoUrl: './assert/ico/website.png',
-                keywords: 'chatgpt plus codex claude findai8',
-                highlight: false,
-                recommended: false
-            },
-            {
                 title: 'aisubdeal',
                 desc: '专门找各国 App Store 最便宜的订阅地区（ChatGPT、Claude 等',
                 url: 'https://www.aisubdeal.com/zh/',
